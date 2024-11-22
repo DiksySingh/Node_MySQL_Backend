@@ -9,8 +9,8 @@ const userSignUp = async(req, res) => {
                 message: "All fields are required"
             });
         }
-
         const existingEmailId = await userModel.checkEmail(email);
+        console.log(existingEmailId);
         if(existingEmailId){
             return res.status(400).json({
                 success: false,
